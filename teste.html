@@ -1,0 +1,25 @@
+<html>
+    <script>
+        alert ('Bem vindo ao jogo, Vamos ver se você acerta o Número Secreto?');
+        let LimiteNumero = 500; 
+        let NumeroSecreto = parseInt(Math.random() * LimiteNumero + 1);
+        let chute
+        let tentativas = 1;
+
+        while (chute != NumeroSecreto) {
+            chute = prompt (`Tente acertar o Número Secreto, digite um número de 1 a ${LimiteNumero}:`);
+            if (chute == NumeroSecreto) {
+                break;
+            } else {
+                if (chute > NumeroSecreto) {
+                    alert (`Você Errou, o Número secreto não é ${chute}, tente um número menor`);
+                } else {
+                    alert (`Você Errou, o Número Secreto não é ${chute}, tente um número maior`);
+                }
+            }
+            tentativas++;
+        }
+        let palavraTentativas = tentativas > 1? 'tentativas' : 'tentativas';
+        alert (`Parabéns! Você acertou com ${tentativas} ${palavraTentativas}, O número secreto é ${NumeroSecreto}`);
+    </script>
+</html>
